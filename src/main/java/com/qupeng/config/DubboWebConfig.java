@@ -14,11 +14,11 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * 配置类
  */
 @Configuration // == xml
-@PropertySource({"xxx-web.properties"}) //读取一下xxx-web.properties配置文件
+@PropertySource({"classpath:xxx-web.properties"}) //读取一下xxx-web.properties配置文件
 @ComponentScan(basePackages = {"com.qupeng.component"}) //扫描spring的@Component注解
 @EnableDubbo(scanBasePackages = {"com.qupeng.component"}) //扫描dubbo的@Reference注解
 
-@ComponentScan(basePackages = {"com.bjpowernode.controller"})
+@ComponentScan(basePackages = {"com.qupeng.controller"})
 @EnableWebMvc //开启springmvc，相当于spring.xml中的<mvc:annotation-driven/>
 public class DubboWebConfig  implements WebMvcConfigurer {
 
